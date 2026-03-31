@@ -25,6 +25,13 @@ export const metadata: Metadata = {
   title: "UN Design — Premium Web Design & Development Studio",
   description:
     "UN Design is a premium design studio helping startups and ambitious businesses turn ideas into high-performing digital products — from first pixel to final launch.",
+  icons: {
+    icon: [
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default async function LocaleLayout({

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -37,11 +38,18 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link
-          href="/"
-          className="text-xl font-heading font-bold tracking-tight text-white"
-        >
-          UN<span className="text-[var(--accent)]">.</span>Design
+        <Link href="/" className="flex items-center gap-2.5">
+          <Image
+            src="/logo.png"
+            alt="UN Design"
+            width={36}
+            height={36}
+            className="rounded-full"
+            priority
+          />
+          <span className="text-xl font-heading font-bold tracking-tight text-white">
+            UN<span className="text-[var(--accent)]">.</span>Design
+          </span>
         </Link>
 
         {/* Desktop Nav */}

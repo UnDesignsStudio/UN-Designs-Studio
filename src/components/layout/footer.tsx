@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
@@ -23,9 +24,18 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start gap-1">
             <Link
               href="/"
-              className="text-lg font-heading font-bold tracking-tight text-white hover:text-[var(--accent)] transition-colors"
+              className="flex items-center gap-2.5 hover:opacity-90 transition-opacity"
             >
-              UN<span className="text-[var(--accent)]">.</span>Design
+              <Image
+                src="/logo.png"
+                alt="UN Design"
+                width={32}
+                height={32}
+                className="rounded-full"
+              />
+              <span className="text-lg font-heading font-bold tracking-tight text-white">
+                UN<span className="text-[var(--accent)]">.</span>Design
+              </span>
             </Link>
             <span className="text-sm text-[var(--text-muted)]">
               {t("footer.tagline")}
