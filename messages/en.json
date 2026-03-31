@@ -1,0 +1,219 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "process": "Process",
+    "contact": "Contact",
+    "cta": "Book a Call"
+  },
+  "hero": {
+    "badge": "Available Worldwide — Remote First",
+    "headline": "We design experiences",
+    "headlineAccent": "that convert.",
+    "subheadline": "We build high-end websites, apps, and brands for businesses that refuse to blend in.",
+    "ctaPrimary": "Book a Free Call",
+    "ctaSecondary": "See Our Services",
+    "trust": "Free 30-min strategy call · No commitment · Reply within 24h"
+  },
+  "marquee": {
+    "text": "WE BUILD · WE DESIGN · WE BRAND · WE DEVELOP · "
+  },
+  "positioning": {
+    "whoLabel": "WHO",
+    "who": "For startups, businesses & brands",
+    "whatLabel": "WHAT",
+    "what": "Web, UI/UX, branding & apps",
+    "whereLabel": "WHERE",
+    "where": "Belgrade-based · Global reach"
+  },
+  "services": {
+    "label": "WHAT WE DO",
+    "title": "Services tailored to your needs",
+    "subtitle": "Every project is unique. We bring together design and technology to deliver solutions that drive real results.",
+    "cta": "Explore All Services",
+    "items": {
+      "web": {
+        "title": "Web Design & Development",
+        "description": "Custom websites and web applications built with modern frameworks. Fast, responsive, and scalable — from landing pages to full-stack platforms.",
+        "tags": "Next.js, React, TypeScript, Node.js"
+      },
+      "uiux": {
+        "title": "UI / UX Design",
+        "description": "User-centered interfaces designed for clarity and delight. Wireframes, prototypes, and polished designs that convert visitors into customers.",
+        "tags": "Figma, Prototyping, User Research, Design Systems"
+      },
+      "branding": {
+        "title": "Branding & Graphic Design",
+        "description": "Complete brand identities that tell your story. Logo design, typography, color systems, and brand guidelines that make you memorable.",
+        "tags": "Logo Design, Brand Strategy, Identity, Print"
+      },
+      "app": {
+        "title": "Application Development",
+        "description": "Native and cross-platform mobile applications built for performance. From concept to App Store — we handle the entire journey.",
+        "tags": "React Native, Flutter, iOS, Android"
+      }
+    }
+  },
+  "process": {
+    "label": "HOW WE WORK",
+    "title": "From idea to launch",
+    "subtitle": "A clear, proven process that keeps you in the loop at every step.",
+    "timeline": "Most projects go from brief to live in 3–5 weeks.",
+    "steps": {
+      "discovery": {
+        "title": "We listen first.",
+        "description": "We start with a free strategy call to understand your goals, audience, and competition. No templates. No assumptions.",
+        "duration": "1–2 days",
+        "deliverables": "Project brief, Competitive analysis, Scope of work"
+      },
+      "design": {
+        "title": "We design with intent.",
+        "description": "Wireframes, moodboards, and high-fidelity mockups — all aligned to your brand and business objectives. You review and we refine.",
+        "duration": "5–10 days",
+        "deliverables": "Wireframes, Design system, 2 revision rounds"
+      },
+      "build": {
+        "title": "We build fast. We build right.",
+        "description": "Clean, performant code. Mobile-first. SEO-ready from day one. You see progress weekly — no black boxes.",
+        "duration": "10–20 days",
+        "deliverables": "Staging environment, Weekly check-ins, Optimized build"
+      },
+      "launch": {
+        "title": "We don't disappear.",
+        "description": "We handle deployment, final QA, and post-launch monitoring. After launch, we stay available for fixes, updates, and growth.",
+        "duration": "1–2 days + ongoing",
+        "deliverables": "Live deployment, Post-launch checklist, 30-day support"
+      }
+    },
+    "pageTitle": "How We Work",
+    "pageSubtitle": "A clear, proven process that takes your project from idea to reality — on time and on budget.",
+    "expectTitle": "What to expect",
+    "expectResponse": "Response within 24 hours",
+    "expectRevisions": "2 revision rounds included",
+    "expectTools": "Figma, Notion & Slack/Email",
+    "expectUpdates": "Weekly progress updates",
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "How long does a project take?",
+      "a1": "Most projects take 3–5 weeks from brief to launch. Complex applications may take longer — we'll give you a clear timeline during the discovery phase.",
+      "q2": "What do I need to provide?",
+      "a2": "Just your vision and goals. We handle everything else — from content strategy to design to development. If you have existing brand assets, even better.",
+      "q3": "Do you offer revisions?",
+      "a3": "Yes. Every project includes 2 revision rounds during the design phase. We iterate until you're completely satisfied.",
+      "q4": "Can I see progress before launch?",
+      "a4": "Absolutely. You'll have access to a staging environment with weekly updates. No surprises — you're involved at every step."
+    },
+    "cta": "Ready to start? Book your free call."
+  },
+  "scheduler": {
+    "title": "Let's talk about your project",
+    "subtitle": "Book a free 30-minute strategy call. No commitment required.",
+    "cta": "Start with a free strategy call"
+  },
+  "about": {
+    "label": "ABOUT US",
+    "title": "We are UN Design",
+    "description": "UN Design is a premium design studio helping startups and ambitious businesses turn ideas into high-performing digital products — from first pixel to final launch.",
+    "story": "We believe great digital products start with understanding your goals. We combine strategic thinking with creative execution to deliver work that not only looks stunning but performs exceptionally.",
+    "storyMore": "Whether you're a startup looking for your first brand identity or an established business ready to level up your digital presence, we're here to help you make an impact.",
+    "values": {
+      "title": "Our values",
+      "craft": {
+        "title": "Craft over speed",
+        "description": "We don't rush. Every pixel, every line of code, every decision is intentional."
+      },
+      "transparency": {
+        "title": "Radical transparency",
+        "description": "No black boxes. You see our work, our process, and our thinking — at every step."
+      },
+      "results": {
+        "title": "Results that matter",
+        "description": "Beautiful design is nothing without performance. We measure success by your success."
+      }
+    },
+    "promise": {
+      "title": "Our promise",
+      "items": "Pixel-perfect attention to detail, Clear communication throughout, On-time delivery, Post-launch support included"
+    },
+    "cta": "Let's work together"
+  },
+  "contact": {
+    "label": "CONTACT",
+    "title": "Let's Work Together",
+    "subtitle": "Have a project in mind? Book a call or fill out the form — we'll get back to you within 24 hours.",
+    "or": "Or reach out directly",
+    "email": "un.studio.rs@gmail.com",
+    "location": "Belgrade, Serbia — Available worldwide",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@example.com",
+      "message": "Project Details",
+      "messagePlaceholder": "Tell us about your project, goals, and timeline...",
+      "submit": "Send Message",
+      "success": "Message Sent!",
+      "successText": "Thanks for reaching out. We'll get back to you within 24 hours."
+    },
+    "confirm": "We'll confirm within 24 hours."
+  },
+  "footer": {
+    "tagline": "Premium design studio — Belgrade & worldwide.",
+    "copyright": "© {year} UN Design. All rights reserved.",
+    "builtWith": "Built with precision & purposeful creativity."
+  },
+  "stickyBar": {
+    "text": "Book a free 30-min call →"
+  },
+  "servicesPage": {
+    "title": "What we do",
+    "subtitle": "From branding to full-stack development — we bring your vision to life with pixel-perfect precision.",
+    "web": {
+      "title": "Web Design & Development",
+      "hook": "Your website is your most powerful salesperson. Let's make it work harder.",
+      "description": "We build fast, modern, and scalable websites and web applications using cutting-edge technologies. Every line of code is crafted for performance, accessibility, and SEO.",
+      "includes": "Corporate & business websites, E-commerce platforms, Responsive web applications, Custom CMS & dashboards",
+      "approach1": "Understand your goals and audience",
+      "approach2": "Design responsive, conversion-focused layouts",
+      "approach3": "Build with clean, performant code",
+      "why": "Your website is the first thing people see. A fast, beautiful, well-built site builds trust and converts visitors into clients.",
+      "cta": "Let's build your website"
+    },
+    "uiux": {
+      "title": "UI / UX Design",
+      "hook": "Good design is invisible. Bad design is everywhere.",
+      "description": "User-centered design that combines beauty with usability. We research, prototype, test, and refine until every interaction feels intuitive.",
+      "includes": "User research & personas, Wireframes & prototypes, Interaction design, Usability testing & analytics",
+      "approach1": "Research your users and competitors",
+      "approach2": "Prototype and test before building",
+      "approach3": "Refine based on real feedback",
+      "why": "Great UX reduces friction, increases engagement, and turns casual visitors into loyal customers.",
+      "cta": "Let's design your product"
+    },
+    "branding": {
+      "title": "Branding & Graphic Design",
+      "hook": "Your brand is how people feel about you when you're not in the room.",
+      "description": "We build brands that resonate. From strategy and naming to visual identity — cohesive brand systems that make your business unforgettable.",
+      "includes": "Logo design & variations, Typography & color systems, Brand guidelines & style guide, Marketing collateral & social media",
+      "approach1": "Audit your current brand position",
+      "approach2": "Define your brand personality and voice",
+      "approach3": "Create a complete visual identity system",
+      "why": "A strong brand is the foundation of everything. It builds trust, recognition, and emotional connection with your audience.",
+      "cta": "Let's build your brand"
+    },
+    "app": {
+      "title": "Application Development",
+      "hook": "From idea to App Store — we handle the entire journey.",
+      "description": "Native and cross-platform mobile applications built for performance. We handle everything from concept and UX to development and store submission.",
+      "includes": "Cross-platform mobile apps, Native iOS & Android, API development & integration, App Store optimization",
+      "approach1": "Map your app's core user flows",
+      "approach2": "Build an MVP and iterate fast",
+      "approach3": "Launch, monitor, and optimize",
+      "why": "A well-built app extends your reach to millions of mobile users and creates a direct channel to your customers.",
+      "cta": "Let's build your app"
+    },
+    "readyTitle": "Ready to start your project?",
+    "readySubtitle": "Let's discuss how we can bring your vision to life.",
+    "readyCta": "Book a Free Call"
+  }
+}

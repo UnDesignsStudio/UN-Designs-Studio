@@ -1,0 +1,219 @@
+{
+  "nav": {
+    "services": "Usluge",
+    "about": "O Nama",
+    "process": "Proces",
+    "contact": "Kontakt",
+    "cta": "Zakažite Poziv"
+  },
+  "hero": {
+    "badge": "Dostupni širom sveta — Remote First",
+    "headline": "Dizajniramo iskustva",
+    "headlineAccent": "koja konvertuju.",
+    "subheadline": "Pravimo vrhunske sajtove, aplikacije i brendove za biznise koji odbijaju da ostanu neprimetni.",
+    "ctaPrimary": "Zakažite Besplatan Poziv",
+    "ctaSecondary": "Pogledajte Usluge",
+    "trust": "Besplatan 30-min poziv · Bez obaveza · Odgovaramo u roku od 24h"
+  },
+  "marquee": {
+    "text": "GRADIMO · DIZAJNIRAMO · BRENDIRAMO · RAZVIJAMO · "
+  },
+  "positioning": {
+    "whoLabel": "ZA KOGA",
+    "who": "Za startupe, biznise i brendove",
+    "whatLabel": "ŠTA",
+    "what": "Web, UI/UX, brendiranje i aplikacije",
+    "whereLabel": "GDE",
+    "where": "Beograd · Globalni doseg"
+  },
+  "services": {
+    "label": "ŠTA RADIMO",
+    "title": "Usluge prilagođene vašim potrebama",
+    "subtitle": "Svaki projekat je jedinstven. Kombinujemo dizajn i tehnologiju da isporučimo rešenja koja donose prave rezultate.",
+    "cta": "Pogledajte sve usluge",
+    "items": {
+      "web": {
+        "title": "Web Dizajn i Razvoj",
+        "description": "Prilagođeni sajtovi i web aplikacije napravljene sa modernim okvirima. Brzo, responzivno i skalabilno — od landing stranica do full-stack platformi.",
+        "tags": "Next.js, React, TypeScript, Node.js"
+      },
+      "uiux": {
+        "title": "UI / UX Dizajn",
+        "description": "Korisnički orijentisani interfejsi dizajnirani za jasnoću i zadovoljstvo. Wireframe-ovi, prototipovi i uglačani dizajni koji pretvaraju posetioce u kupce.",
+        "tags": "Figma, Prototipiranje, Istraživanje korisnika, Design sistemi"
+      },
+      "branding": {
+        "title": "Brendiranje i Grafički Dizajn",
+        "description": "Kompletni brendovski identiteti koji pričaju vašu priču. Dizajn logoa, tipografija, sistemi boja i smernice brenda koje vas čine nezaboravnim.",
+        "tags": "Dizajn logoa, Strategija brenda, Identitet, Štampa"
+      },
+      "app": {
+        "title": "Razvoj Aplikacija",
+        "description": "Nativne i cross-platform mobilne aplikacije napravljene za performanse. Od koncepta do App Store-a — vodimo vas kroz ceo proces.",
+        "tags": "React Native, Flutter, iOS, Android"
+      }
+    }
+  },
+  "process": {
+    "label": "KAKO RADIMO",
+    "title": "Od ideje do lansiranja",
+    "subtitle": "Jasan, proveren proces koji vas drži u toku na svakom koraku.",
+    "timeline": "Većina projekata ide od briefinga do lansiranja za 3–5 sedmica.",
+    "steps": {
+      "discovery": {
+        "title": "Prvo slušamo.",
+        "description": "Počinjemo besplatnim strateškim pozivom da razumemo vaše ciljeve, publiku i konkurenciju. Bez šablona. Bez pretpostavki.",
+        "duration": "1–2 dana",
+        "deliverables": "Projektni brief, Analiza konkurencije, Obim posla"
+      },
+      "design": {
+        "title": "Dizajniramo s ciljem.",
+        "description": "Wireframe, moodboard i visoko-fidelni mockupi — sve usklađeno s vašim brendom i poslovnim ciljevima. Vi pregledate, mi dotjerujemo.",
+        "duration": "5–10 dana",
+        "deliverables": "Wireframe-ovi, Design sistem, 2 kruga revizija"
+      },
+      "build": {
+        "title": "Gradimo brzo. Gradimo ispravno.",
+        "description": "Čist, performantan kod. Mobile-first. SEO-spreman od prvog dana. Napredak pratite sedmično — bez crnih kutija.",
+        "duration": "10–20 dana",
+        "deliverables": "Staging okruženje, Sedmični check-in, Optimizovan build"
+      },
+      "launch": {
+        "title": "Ne nestajemo.",
+        "description": "Mi se brinemo o deploymentu, finalnom QA-u i post-launch praćenju. Nakon lansiranja, dostupni smo za popravke, ažuriranja i rast.",
+        "duration": "1–2 dana + kontinuirano",
+        "deliverables": "Lansirani sajt, Post-launch checklista, 30-dnevna podrška"
+      }
+    },
+    "pageTitle": "Kako Radimo",
+    "pageSubtitle": "Jasan, proveren proces koji vaš projekat vodi od ideje do stvarnosti — na vreme i u budžetu.",
+    "expectTitle": "Šta možete očekivati",
+    "expectResponse": "Odgovor u roku od 24 sata",
+    "expectRevisions": "2 kruga revizija uključena",
+    "expectTools": "Figma, Notion i Slack/Email",
+    "expectUpdates": "Sedmični ažuriranja o napretku",
+    "faq": {
+      "title": "Često Postavljana Pitanja",
+      "q1": "Koliko traje projekat?",
+      "a1": "Većina projekata traje 3–5 sedmica od briefinga do lansiranja. Složene aplikacije mogu trajati duže — dajemo vam jasan vremenski okvir tokom faze otkrivanja.",
+      "q2": "Šta trebam da obezbedim?",
+      "a2": "Samo vašu viziju i ciljeve. Mi se brinemo o svemu ostalom — od strategije sadržaja do dizajna i razvoja. Ako imate postojeće brendovske materijale, utoliko bolje.",
+      "q3": "Da li nudite revizije?",
+      "a3": "Da. Svaki projekat uključuje 2 kruga revizija tokom faze dizajna. Iteriramo dok niste potpuno zadovoljni.",
+      "q4": "Mogu li da vidim napredak pre lansiranja?",
+      "a4": "Apsolutno. Imaćete pristup staging okruženju sa sedmičnim ažuriranjima. Bez iznenađenja — uključeni ste na svakom koraku."
+    },
+    "cta": "Spremni ste? Zakažite besplatan poziv."
+  },
+  "scheduler": {
+    "title": "Razgovarajmo o vašem projektu",
+    "subtitle": "Zakažite besplatan 30-minutni strateški poziv. Bez obaveza.",
+    "cta": "Počnite s besplatnim strateškim pozivom"
+  },
+  "about": {
+    "label": "O NAMA",
+    "title": "Mi smo UN Design",
+    "description": "UN Design je premium dizajn studio koji pomaže startupima i ambicioznim biznesima da ideje pretvore u visoko-performantne digitalne proizvode — od prvog piksela do finalnog lansiranja.",
+    "story": "Verujemo da sjajni digitalni proizvodi počinju sa razumevanjem vaših ciljeva. Kombinujemo strateško razmišljanje sa kreativnom realizacijom da isporučimo rad koji ne samo da izgleda sjajno, već i izuzetno performira.",
+    "storyMore": "Bilo da ste startup koji traži svoj prvi brendovski identitet ili etablirana firma spremna da podigne svoj digitalni prisustvo, tu smo da vam pomognemo da ostavite utisak.",
+    "values": {
+      "title": "Naše vrednosti",
+      "craft": {
+        "title": "Zanatstvo iznad brzine",
+        "description": "Ne žurimo. Svaki piksel, svaka linija koda, svaka odluka je namerna."
+      },
+      "transparency": {
+        "title": "Radikalna transparentnost",
+        "description": "Bez crnih kutija. Vi vidite naš rad, naš proces i naše razmišljanje — na svakom koraku."
+      },
+      "results": {
+        "title": "Rezultati koji su bitni",
+        "description": "Lep dizajn je ništa bez performansi. Uspeh merimo vašim uspehom."
+      }
+    },
+    "promise": {
+      "title": "Naše obećanje",
+      "items": "Pažnja na svaki detalj, Jasna komunikacija, Isporuka na vreme, Post-launch podrška uključena"
+    },
+    "cta": "Hajde da radimo zajedno"
+  },
+  "contact": {
+    "label": "KONTAKT",
+    "title": "Hajde da Radimo Zajedno",
+    "subtitle": "Imate projekat na umu? Zakažite poziv ili popunite formu — javićemo vam se u roku od 24 sata.",
+    "or": "Ili nam se javite direktno",
+    "email": "un.studio.rs@gmail.com",
+    "location": "Beograd, Srbija — Dostupni širom sveta",
+    "form": {
+      "name": "Ime",
+      "namePlaceholder": "Vaše ime",
+      "email": "Email",
+      "emailPlaceholder": "vi@primer.com",
+      "message": "Detalji Projekta",
+      "messagePlaceholder": "Recite nam o vašem projektu, ciljevima i vremenskom okviru...",
+      "submit": "Pošaljite Poruku",
+      "success": "Poruka Poslata!",
+      "successText": "Hvala što ste se javili. Odgovorićemo u roku od 24 sata."
+    },
+    "confirm": "Potvrdićemo u roku od 24 sata."
+  },
+  "footer": {
+    "tagline": "Premium dizajn studio — Beograd i šire.",
+    "copyright": "© {year} UN Design. Sva prava zadržana.",
+    "builtWith": "Napravljeno sa preciznošću i svrsishodnom kreativnošću."
+  },
+  "stickyBar": {
+    "text": "Zakažite besplatan 30-min poziv →"
+  },
+  "servicesPage": {
+    "title": "Šta radimo",
+    "subtitle": "Od brendiranja do full-stack razvoja — oživljavamo vašu viziju sa piksel-savršenom preciznošću.",
+    "web": {
+      "title": "Web Dizajn i Razvoj",
+      "hook": "Vaš sajt je vaš najmoćniji prodavac. Hajde da ga učinimo efikasnijim.",
+      "description": "Gradimo brze, moderne i skalabilne sajtove i web aplikacije koristeći najnovije tehnologije. Svaka linija koda je napravljena za performanse, pristupačnost i SEO.",
+      "includes": "Korporativni i poslovni sajtovi, E-commerce platforme, Responzivne web aplikacije, Prilagođeni CMS i dashboardi",
+      "approach1": "Razumemo vaše ciljeve i publiku",
+      "approach2": "Dizajniramo responzivne, konverzijski fokusirane layoute",
+      "approach3": "Gradimo sa čistim, performantnim kodom",
+      "why": "Vaš sajt je prva stvar koju ljudi vide. Brz, lep, dobro izgrađen sajt gradi poverenje i pretvara posetioce u klijente.",
+      "cta": "Hajde da napravimo vaš sajt"
+    },
+    "uiux": {
+      "title": "UI / UX Dizajn",
+      "hook": "Dobar dizajn je nevidljiv. Loš dizajn je svuda.",
+      "description": "Korisnički orijentisan dizajn koji kombinuje lepotu sa upotrebljivošću. Istražujemo, prototipiramo, testiramo i usavršavamo dok svaka interakcija ne bude intuitivna.",
+      "includes": "Istraživanje korisnika i persone, Wireframe-ovi i prototipovi, Dizajn interakcija, Testiranje upotrebljivosti i analitika",
+      "approach1": "Istražujemo vaše korisnike i konkurente",
+      "approach2": "Prototipiramo i testiramo pre izgradnje",
+      "approach3": "Usavršavamo na osnovu pravih povratnih informacija",
+      "why": "Sjajan UX smanjuje frikciju, povećava angažovanost i pretvara obične posetioce u lojalne kupce.",
+      "cta": "Hajde da dizajniramo vaš proizvod"
+    },
+    "branding": {
+      "title": "Brendiranje i Grafički Dizajn",
+      "hook": "Vaš brend je kako se ljudi osećaju o vama kad niste u sobi.",
+      "description": "Gradimo brendove koji rezoniraju. Od strategije i imenovanja do vizuelnog identiteta — koherentni brendovski sistemi koji vaš biznis čine nezaboravnim.",
+      "includes": "Dizajn logoa i varijacije, Tipografija i sistemi boja, Smernice brenda i vodič stila, Marketing materijali i društvene mreže",
+      "approach1": "Analiziramo vašu trenutnu brendovsku poziciju",
+      "approach2": "Definišemo vašu brendovsku ličnost i glas",
+      "approach3": "Kreiramo kompletan vizuelni identitet",
+      "why": "Jak brend je temelj svega. Gradi poverenje, prepoznatljivost i emocionalnu vezu sa vašom publikom.",
+      "cta": "Hajde da izgradimo vaš brend"
+    },
+    "app": {
+      "title": "Razvoj Aplikacija",
+      "hook": "Od ideje do App Store-a — vodimo vas kroz ceo proces.",
+      "description": "Nativne i cross-platform mobilne aplikacije napravljene za performanse. Vodimo sve od koncepta i UX-a do razvoja i objave u prodavnici.",
+      "includes": "Cross-platform mobilne aplikacije, Nativne iOS i Android, API razvoj i integracija, Optimizacija za App Store",
+      "approach1": "Mapiramo ključne korisničke tokove vaše aplikacije",
+      "approach2": "Gradimo MVP i brzo iteriramo",
+      "approach3": "Lansiramo, pratimo i optimizujemo",
+      "why": "Dobro napravljena aplikacija proširuje vaš doseg na milione mobilnih korisnika i stvara direktan kanal ka vašim kupcima.",
+      "cta": "Hajde da napravimo vašu aplikaciju"
+    },
+    "readyTitle": "Spremni da započnete projekat?",
+    "readySubtitle": "Hajde da razgovaramo o tome kako možemo oživeti vašu viziju.",
+    "readyCta": "Zakažite Besplatan Poziv"
+  }
+}
