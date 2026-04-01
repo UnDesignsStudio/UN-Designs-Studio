@@ -141,6 +141,10 @@
     "label": "KONTAKT",
     "title": "Hajde da Radimo Zajedno",
     "subtitle": "Imate projekat na umu? Zakažite poziv ili popunite formu — javićemo vam se u roku od 24 sata.",
+    "booking": {
+      "title": "Zakaži Sastanak",
+      "subtitle": "Rezervišite 30-minutni poziv sa nama"
+    },
     "or": "Ili nam se javite direktno",
     "email": "un.studio.rs@gmail.com",
     "location": "Beograd, Srbija — Dostupni širom sveta",

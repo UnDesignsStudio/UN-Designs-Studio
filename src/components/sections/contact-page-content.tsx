@@ -81,27 +81,48 @@ export function ContactPage() {
         </div>
       </section>
 
-      {/* Meeting scheduler placeholder */}
+      {/* Meeting scheduler - Cal.com embed */}
       <section className="px-6 lg:px-8 mb-16">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <div className="rounded-2xl border border-[var(--accent)]/20 bg-[var(--surface)] p-12 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--accent)]/10 text-[var(--accent)] mx-auto mb-6">
-                <Calendar size={28} />
+            <div className="rounded-2xl border border-[var(--accent)]/20 bg-[var(--surface)] overflow-hidden">
+              {/* Header */}
+              <div className="p-8 border-b border-[var(--border)]">
+                <h2 className="text-2xl font-heading font-bold text-white mb-2">
+                  {t("booking.title")}
+                </h2>
+                <p className="text-sm text-[var(--text-secondary)]">
+                  {t("booking.subtitle")}
+                </p>
               </div>
-              <h2 className="text-2xl font-heading font-bold text-white mb-2">
-                Meeting Scheduler
-              </h2>
-              <p className="text-sm text-[var(--text-secondary)] mb-6 max-w-md mx-auto">
-                Cal.com integration coming soon. For now, reach out via the form
-                below or email us directly.
-              </p>
-              <a
-                href="mailto:un.studio.rs@gmail.com"
-                className="inline-flex h-12 items-center gap-2 rounded-full bg-[var(--accent)] px-8 text-sm font-semibold text-black hover:brightness-110 transition-all duration-200 cursor-pointer"
-              >
-                <Mail size={16} /> {t("email")}
-              </a>
+
+              {/* Cal.com Embed */}
+              <div className="w-full" style={{ minHeight: "600px" }}>
+                <iframe
+                  src="https://cal.com/un-design-v17dtf/30min?overlayCalendar=true"
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  title="Schedule a Meeting"
+                  style={{
+                    border: "none",
+                    display: "block",
+                  }}
+                />
+              </div>
+
+              {/* Fallback email */}
+              <div className="p-8 border-t border-[var(--border)] text-center">
+                <p className="text-xs text-[var(--text-muted)] mb-3">
+                  Can't use the scheduler?
+                </p>
+                <a
+                  href="mailto:un.studio.rs@gmail.com"
+                  className="inline-flex h-10 items-center gap-2 rounded-full bg-[var(--accent)]/10 px-6 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent)]/20 transition-colors"
+                >
+                  <Mail size={14} /> {t("email")}
+                </a>
+              </div>
             </div>
           </FadeIn>
         </div>
