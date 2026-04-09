@@ -93,14 +93,17 @@ export function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle - Hidden when menu is open */}
         <button
-          className="md:hidden p-2 text-[var(--text-secondary)] hover:text-white cursor-pointer transition-colors"
+          className={cn(
+            "md:hidden p-2 text-[var(--text-secondary)] hover:text-white cursor-pointer transition-colors",
+            mobileOpen && "hidden"
+          )}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation menu"
           aria-expanded={mobileOpen}
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          <Menu size={24} />
         </button>
       </div>
 
@@ -155,13 +158,13 @@ function MobileMenuPortal({
             transition={{ duration: 0.2 }}
             className="fixed inset-0 z-49 flex flex-col pt-20 px-8 overflow-y-auto md:hidden"
           >
-            {/* Close Button - Top Right */}
+            {/* Close Button - Top Right (Fixed to always stay visible) */}
             <motion.button
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               transition={{ duration: 0.3, delay: 0.1 }}
               onClick={onClose}
-              className="absolute top-6 right-8 text-white hover:text-[var(--accent)] transition-colors p-2"
+              className="fixed top-6 right-8 z-50 text-white hover:text-[var(--accent)] transition-colors p-2 md:hidden"
               aria-label="Close menu"
             >
               <X size={24} />
