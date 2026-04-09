@@ -159,16 +159,22 @@ function MobileMenuPortal({
             className="fixed inset-0 z-49 flex flex-col pt-20 px-8 overflow-y-auto md:hidden"
           >
             {/* Close Button - Top Right (Fixed to always stay visible) */}
-            <motion.button
+            <motion.div
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.3, delay: 0.1 }}
-              onClick={onClose}
-              className="fixed top-6 right-8 z-50 text-white hover:text-[var(--accent)] transition-colors p-2 md:hidden"
-              aria-label="Close menu"
+              className="fixed top-6 right-8 z-50 md:hidden"
             >
-              <X size={24} />
-            </motion.button>
+              <button
+                onClick={onClose}
+                className="text-white hover:text-[var(--accent)] transition-colors p-2 cursor-pointer"
+                aria-label="Close menu"
+                type="button"
+              >
+                <X size={24} />
+              </button>
+            </motion.div>
 
             {/* Navigation Links */}
             <div className="flex flex-col gap-6 pr-8">
