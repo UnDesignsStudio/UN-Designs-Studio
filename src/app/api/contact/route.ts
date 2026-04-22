@@ -46,7 +46,7 @@ export async function POST(request: Request) {
       to: TO_EMAIL,
       replyTo: email,
       subject: `New inquiry from ${name}`,
-      text: `From: ${name} <${email}>\n\n${message}\n\n— Sent from un-designs-studio.vercel.app`,
+      text: `From: ${name} <${email}>\n\n${message}\n\n— Sent from undesignsstudio.com`,
       html: `
         <div style="font-family: -apple-system, system-ui, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px;">
           <div style="border-left: 3px solid #e8ff00; padding-left: 16px; margin-bottom: 24px;">
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
           </div>
           <div style="white-space: pre-wrap; font-size: 15px; line-height: 1.6; color: #1a1a1a;">${escapeHtml(message)}</div>
           <hr style="border: 0; border-top: 1px solid #eee; margin: 32px 0;" />
-          <p style="color: #999; font-size: 12px; margin: 0;">Sent from un-designs-studio.vercel.app</p>
+          <p style="color: #999; font-size: 12px; margin: 0;">Sent from undesignsstudio.com</p>
         </div>
       `,
     });

@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { caseStudies } from "@/data/case-studies";
 
 const SITE =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://un-designs-studio.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://undesignsstudio.com";
 
 const locales = ["en", "sr"] as const;
 const staticPaths = ["", "work", "services", "process", "about", "contact"];
