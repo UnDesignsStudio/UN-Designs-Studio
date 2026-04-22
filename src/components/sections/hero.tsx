@@ -3,72 +3,152 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { MagneticButton } from "@/components/ui/magnetic-button";
+
+const wordVariants = {
+  hidden: { opacity: 0, y: "110%" },
+  show: {
+    opacity: 1,
+    y: "0%",
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
+
+function StaggeredLine({
+  text,
+  delay = 0,
+  accent = false,
+  className = "",
+}: {
+  text: string;
+  delay?: number;
+  accent?: boolean;
+  className?: string;
+}) {
+  const words = text.split(" ");
+  return (
+    <span className={`block overflow-hidden ${className}`}>
+      <motion.span
+        className="inline-block"
+        initial="hidden"
+        animate="show"
+        transition={{ staggerChildren: 0.06, delayChildren: delay }}
+      >
+        {words.map((word, i) => (
+          <span key={i} className="inline-block overflow-hidden align-baseline">
+            <motion.span
+              variants={wordVariants}
+              className={`inline-block ${accent ? "text-[var(--accent)] italic" : ""}`}
+              style={{ paddingRight: i < words.length - 1 ? "0.22em" : 0 }}
+            >
+              {word}
+            </motion.span>
+          </span>
+        ))}
+      </motion.span>
+    </span>
+  );
+}
 
 export function Hero() {
   const t = useTranslations("hero");
 
   return (
-    <section className="relative min-h-screen flex items-end pb-24 px-6 lg:px-8 overflow-hidden">
-      {/* Gradient orb background */}
+    <section className="relative min-h-screen flex items-end pb-24 pt-40 px-6 lg:px-10 overflow-hidden">
+      {/* Local vignette to push focus to hero copy (shader lives globally in layout) */}
       <div
-        className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] pointer-events-none z-0"
+        aria-hidden
+        className="absolute inset-0 z-[0] pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(232,255,0,0.08) 0%, transparent 70%)",
-          filter: "blur(120px)",
-        }}
-      />
-      <div
-        className="absolute top-[10%] right-[20%] w-[400px] h-[400px] pointer-events-none z-0"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)",
-          filter: "blur(100px)",
+            "radial-gradient(ellipse 70% 60% at 50% 60%, transparent 40%, rgba(7,8,10,0.55) 100%)",
         }}
       />
 
-      <div className="relative z-10 max-w-4xl">
-        {/* Badge */}
-        <div className="inline-flex items-center px-4 py-2 rounded-full bg-[var(--surface)] backdrop-blur-sm mb-6 border border-[var(--border)] opacity-0 animate-[fade-in-down_0.8s_ease-out_forwards]">
-          <span className="text-[var(--text-secondary)] text-sm font-medium tracking-wide">
+      <div className="relative z-10 max-w-6xl w-full">
+        {/* Availability indicator — scarcity + life */}
+        <motion.div
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-flex items-center gap-2.5 mb-10"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-60 animate-ping" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent)]" />
+          </span>
+          <span className="text-[0.7rem] uppercase tracking-[0.22em] text-[var(--text-secondary)] font-medium">
             {t("badge")}
           </span>
-        </div>
+        </motion.div>
 
-        {/* Headline */}
+        {/* Headline — kinetic word stagger */}
         <h1
-          className="font-heading font-bold text-[var(--text-primary)] leading-[1.05] tracking-[-0.04em] opacity-0 animate-[fade-in-up_0.8s_ease-out_0.2s_forwards]"
-          style={{ fontSize: "clamp(3rem, 8vw, 8rem)" }}
+          className="font-heading font-semibold text-[var(--text-primary)] leading-[0.92] tracking-[-0.035em]"
+          style={{ fontSize: "clamp(2.75rem, 9vw, 9.5rem)" }}
         >
-          {t("headline")}{" "}
-          <span className="text-[var(--accent)]">{t("headlineAccent")}</span>
+          <StaggeredLine text={t("headline")} delay={0.1} />
+          <StaggeredLine text={t("headlineAccent")} delay={0.25} accent />
         </h1>
 
         {/* Subheadline */}
-        <p className="mt-6 text-base md:text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl opacity-0 animate-[fade-in-up_0.8s_ease-out_0.4s_forwards]">
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.7,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="mt-8 text-base md:text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl"
+        >
           {t("subheadline")}
-        </p>
+        </motion.p>
 
-        {/* CTAs */}
-        <div className="flex items-center gap-4 flex-wrap mt-8 opacity-0 animate-[fade-in-up_0.8s_ease-out_0.6s_forwards]">
-          <Link
+        {/* CTAs — single primary magnetic + text link secondary */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.85,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="flex items-center gap-8 flex-wrap mt-10"
+        >
+          <MagneticButton
             href="/contact"
-            className="inline-flex h-12 items-center gap-2 rounded-full bg-[var(--accent)] px-8 text-sm font-semibold text-black hover:brightness-110 transition-all duration-200 cursor-pointer"
+            className="inline-flex h-14 items-center gap-3 rounded-full bg-[var(--accent)] px-9 text-sm font-semibold tracking-wide text-black transition-[filter,box-shadow] duration-300 hover:brightness-105 shadow-[0_0_0_0_var(--accent-glow)] hover:shadow-[0_0_48px_0_var(--accent-glow)]"
           >
-            {t("ctaPrimary")} <ArrowRight size={16} />
-          </Link>
+            {t("ctaPrimary")}
+            <ArrowRight size={16} className="magnetic-arrow" />
+          </MagneticButton>
+
           <Link
             href="/services"
-            className="inline-flex h-12 items-center rounded-full border border-[var(--border)] px-8 text-sm font-medium text-white hover:bg-[var(--surface)] hover:border-[var(--text-muted)] transition-all duration-200 cursor-pointer"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-[var(--text-primary)] py-2"
           >
-            {t("ctaSecondary")}
+            <span className="relative">
+              {t("ctaSecondary")}
+              <span className="absolute left-0 right-0 -bottom-1 h-px bg-[var(--text-primary)] origin-left scale-x-100 group-hover:scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]" />
+              <span className="absolute left-0 right-0 -bottom-1 h-px bg-[var(--accent)] origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100 ease-[cubic-bezier(0.22,1,0.36,1)]" />
+            </span>
+            <ArrowRight
+              size={14}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
           </Link>
-        </div>
+        </motion.div>
+      </div>
 
-        {/* Trust micro-copy */}
-        <p className="mt-4 text-xs text-[var(--text-muted)] opacity-0 animate-[fade-in-up_0.8s_ease-out_0.8s_forwards]">
-          {t("trust")}
-        </p>
+      {/* Corner meta — adds editorial texture */}
+      <div className="absolute bottom-8 right-8 hidden md:flex flex-col items-end gap-1 text-[0.65rem] uppercase tracking-[0.22em] text-[var(--text-muted)] z-10">
+        <span>{t("meta1")}</span>
+        <span className="flex items-center gap-1.5">
+          <span className="h-px w-6 bg-[var(--border-strong)]" />
+          {t("meta2")}
+        </span>
       </div>
     </section>
   );

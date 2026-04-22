@@ -1,6 +1,7 @@
 {
   "nav": {
     "services": "Services",
+    "work": "Work",
     "about": "About",
     "process": "Process",
     "contact": "Contact",
@@ -13,10 +14,106 @@
     "subheadline": "We build high-end websites, apps, and brands for businesses that refuse to blend in.",
     "ctaPrimary": "Book a Free Call",
     "ctaSecondary": "See Our Services",
-    "trust": "Free 30-min strategy call · No commitment · Reply within 24h"
+    "trust": "Free 30-min strategy call · No commitment · Reply within 24h",
+    "meta1": "Studio · Belgrade",
+    "meta2": "Est. 2024"
   },
   "marquee": {
     "text": "WE BUILD · WE DESIGN · WE BRAND · WE DEVELOP · "
+  },
+  "logoStrip": {
+    "label": "Trusted by founders & teams",
+    "note": "Selective — 2 projects per quarter"
+  },
+  "work": {
+    "label": "SELECTED WORK",
+    "title": "Work that speaks before we do.",
+    "subtitle": "A handful of projects we've built recently. Every one is a small number of ambitious clients — and a measurable outcome.",
+    "viewCase": "View case",
+    "viewAll": "View all work",
+    "caseLabel": "Case"
+  },
+  "workPage": {
+    "label": "ARCHIVE",
+    "title": "Selective. On purpose.",
+    "subtitle": "We work with a small number of teams each year. These are the projects we've chosen to make public.",
+    "ctaTitle": "Want the next case study to be yours?",
+    "ctaButton": "Start the conversation"
+  },
+  "testimonials": {
+    "label": "WHAT CLIENTS SAY",
+    "title": "Results they talk about — and send us more work for.",
+    "subtitle": "A few words from the founders and partners we've shipped with recently."
+  },
+  "faq": {
+    "label": "FAQ",
+    "subtitle": "The things every founder asks us before we start. If yours isn't here, ask.",
+    "footerQuestion": "Still have a question?",
+    "footerCta": "Get in touch"
+  },
+  "caseStudies": {
+    "meridian": {
+      "client": "Meridian°",
+      "title": "Rewriting the financial onboarding for a neobank",
+      "summary": "A bilingual onboarding flow that cut drop-off in half and became the foundation of the product's identity.",
+      "industry": "Fintech",
+      "roles": "Design Lead, Frontend",
+      "services": "Product Design, Brand System, Web Development",
+      "deliverables": "End-to-end onboarding flow (14 screens), Design system in Figma with 120+ tokens, Next.js marketing site + dashboard shell, Brand guidelines (PDF, 48pp)",
+      "metric1Label": "Onboarding completion",
+      "metric1Value": "+48%",
+      "metric2Label": "Time to first deposit",
+      "metric2Value": "−62%",
+      "metric3Label": "CSAT (post-launch)",
+      "metric3Value": "4.8 / 5",
+      "problem": "Meridian°'s signup abandoned at 61% — users hit dense KYC forms before they'd seen any value. The brand was also a Latin-named spreadsheet logo with no voice.",
+      "approach1": "Audited 40+ competitor flows and ran 8 user interviews in SR/EN",
+      "approach2": "Rebuilt the flow as 3 progressive micro-decisions instead of one long form",
+      "approach3": "Created a typographic identity system — no mascot, no stock illustration",
+      "approach4": "Shipped behind a feature flag, measured, then cut over",
+      "outcome": "Launched Q2 2025. Onboarding completion climbed from 39% → 58% in the first six weeks. The same typographic system now runs across their web, mobile, and support docs.",
+      "quote": "They treated the onboarding like a product, not a form. The result didn't just look better — it moved the business.",
+      "quoteAuthor": "A. Ilić",
+      "quoteRole": "Head of Product, Meridian°"
+    },
+    "kauza": {
+      "client": "KAUZA",
+      "title": "A studio identity that made 'boring B2B' feel like a magazine",
+      "summary": "Rebranded a Belgrade consultancy with an editorial voice, a custom wordmark, and a website that reads like a print piece.",
+      "industry": "Professional Services",
+      "roles": "Creative Direction, Brand Design, Web Development",
+      "services": "Brand Identity, Editorial Design, Web Development",
+      "deliverables": "Custom wordmark + full type system, Brand guidelines (PDF, 62pp), Editorial website (8 templates, 4 case study layouts), Pitch deck + proposal system",
+      "metric1Label": "Qualified inbound leads",
+      "metric1Value": "+184%",
+      "metric2Label": "Avg. session duration",
+      "metric2Value": "3m 42s",
+      "metric3Label": "Deals closed in first 90 days",
+      "metric3Value": "7",
+      "problem": "KAUZA had the work but not the wrapper. A consultancy doing eight-figure deals was losing pitches to worse firms with better websites. Their old site read like a 2016 agency template.",
+      "approach1": "Defined an editorial voice — long-form, confident, slightly contrarian",
+      "approach2": "Built a custom wordmark with a serif-to-sans weight transition",
+      "approach3": "Designed the site as a magazine: masthead, features, archive",
+      "approach4": "Typography-first, no stock photography, zero gradients",
+      "outcome": "The rebrand shipped in Q4 2024. Qualified inbound nearly tripled in the next quarter. Three of their largest-ever clients cited the site as the reason they reached out.",
+      "quote": "We didn't want a new logo. We wanted a new posture. That's what they delivered.",
+      "quoteAuthor": "M. Petrović",
+      "quoteRole": "Managing Partner, KAUZA"
+    }
+  },
+  "caseStudy": {
+    "backToWork": "Back to all work",
+    "metaClient": "Client",
+    "metaYear": "Year",
+    "metaRole": "Our role",
+    "metaServices": "Services",
+    "resultsLabel": "RESULTS",
+    "problemLabel": "THE PROBLEM",
+    "approachLabel": "THE APPROACH",
+    "deliverablesLabel": "DELIVERABLES",
+    "outcomeLabel": "OUTCOME",
+    "nextLabel": "NEXT CASE STUDY",
+    "nextCta": "View"
   },
   "positioning": {
     "whoLabel": "WHO",
@@ -59,6 +156,8 @@
     "title": "From idea to launch",
     "subtitle": "A clear, proven process that keeps you in the loop at every step.",
     "timeline": "Most projects go from brief to live in 3–5 weeks.",
+    "stepLabel": "Step",
+    "deliverablesInlineLabel": "Deliverables",
     "steps": {
       "discovery": {
         "title": "We listen first.",
@@ -107,8 +206,14 @@
   },
   "scheduler": {
     "title": "Let's talk about your project",
-    "subtitle": "Book a free 30-minute strategy call. No commitment required.",
-    "cta": "Start with a free strategy call"
+    "subtitle": "Book a free 30-minute strategy call. We'll map your project, call out what we'd do first, and leave you with a plan — whether you hire us or not.",
+    "cta": "Book your call",
+    "label": "NEXT MOVE",
+    "headlineLine1": "Let's",
+    "headlineLine2": "begin.",
+    "trustFree": "Free 30-min call",
+    "trustNoCommit": "No commitment",
+    "trustReply": "Reply within 24h"
   },
   "about": {
     "label": "ABOUT US",
@@ -139,13 +244,14 @@
   },
   "contact": {
     "label": "CONTACT",
-    "title": "Let's Work Together",
-    "subtitle": "Have a project in mind? Book a call or fill out the form — we'll get back to you within 24 hours.",
-    "booking": {
-      "title": "Book a Meeting",
-      "subtitle": "Schedule a 30-minute call with us"
-    },
-    "or": "Or reach out directly",
+    "title": "Let's work together.",
+    "subtitle": "Pick a time that works for you. Free 30-minute strategy call — no slides, no sales pitch. We'll map your project and leave you with a plan.",
+    "or": "OR",
+    "calHint": "Our calendar is live. Pick any open slot — we confirm instantly.",
+    "formHeading": "Prefer to write it out?",
+    "formSubheading": "Send us the shape of the project and we'll reply within 24 hours — questions, scope, or a clear next step.",
+    "directLabel": "DIRECT LINE",
+    "directBlurb": "Not ready for a call? Send us the shape of the project and we'll reply within 24 hours with questions or a next step.",
     "email": "un.studio.rs@gmail.com",
     "location": "Belgrade, Serbia — Available worldwide",
     "form": {
@@ -156,6 +262,8 @@
       "message": "Project Details",
       "messagePlaceholder": "Tell us about your project, goals, and timeline...",
       "submit": "Send Message",
+      "sending": "Sending…",
+      "errorPrefix": "Something went wrong:",
       "success": "Message Sent!",
       "successText": "Thanks for reaching out. We'll get back to you within 24 hours."
     },
@@ -172,6 +280,9 @@
   "servicesPage": {
     "title": "What we do",
     "subtitle": "From branding to full-stack development — we bring your vision to life with pixel-perfect precision.",
+    "includedLabel": "What's included",
+    "approachLabel": "Our approach",
+    "whyLabel": "Why this matters",
     "web": {
       "title": "Web Design & Development",
       "hook": "Your website is your most powerful salesperson. Let's make it work harder.",

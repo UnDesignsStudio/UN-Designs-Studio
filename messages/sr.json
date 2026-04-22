@@ -1,6 +1,7 @@
 {
   "nav": {
     "services": "Usluge",
+    "work": "Radovi",
     "about": "O Nama",
     "process": "Proces",
     "contact": "Kontakt",
@@ -13,10 +14,106 @@
     "subheadline": "Pravimo vrhunske sajtove, aplikacije i brendove za biznise koji odbijaju da ostanu neprimetni.",
     "ctaPrimary": "Zakažite Besplatan Poziv",
     "ctaSecondary": "Pogledajte Usluge",
-    "trust": "Besplatan 30-min poziv · Bez obaveza · Odgovaramo u roku od 24h"
+    "trust": "Besplatan 30-min poziv · Bez obaveza · Odgovaramo u roku od 24h",
+    "meta1": "Studio · Beograd",
+    "meta2": "Osnovano 2024"
   },
   "marquee": {
     "text": "GRADIMO · DIZAJNIRAMO · BRENDIRAMO · RAZVIJAMO · "
+  },
+  "logoStrip": {
+    "label": "Poverenje osnivača i tim­ova",
+    "note": "Selektivno — 2 projekta po kvartalu"
+  },
+  "work": {
+    "label": "IZABRANI RADOVI",
+    "title": "Rad koji govori pre nas.",
+    "subtitle": "Nekoliko projekata koje smo poslednji gradili. Svaki je mali broj ambicioznih klijenata i merljivih rezultata.",
+    "viewCase": "Pogledajte projekat",
+    "viewAll": "Svi radovi",
+    "caseLabel": "Projekat"
+  },
+  "workPage": {
+    "label": "ARHIVA",
+    "title": "Selektivno. Namerno.",
+    "subtitle": "Radimo sa malim brojem tima svake godine. Ovo su projekti koje smo izabrali da postanu javni.",
+    "ctaTitle": "Hoćete da sledeća studija slučaja bude vaša?",
+    "ctaButton": "Započnite razgovor"
+  },
+  "testimonials": {
+    "label": "ŠTA KLIJENTI KAŽU",
+    "title": "Rezultati o kojima pričaju — i zbog kojih nam šalju još posla.",
+    "subtitle": "Nekoliko reči osnivača i partnera sa kojima smo nedavno radili."
+  },
+  "faq": {
+    "label": "FAQ",
+    "subtitle": "Stvari koje nas svaki osnivač pita pre nego što krenemo. Ako nema vašeg pitanja, pitajte.",
+    "footerQuestion": "Imate još neko pitanje?",
+    "footerCta": "Javite nam se"
+  },
+  "caseStudies": {
+    "meridian": {
+      "client": "Meridian°",
+      "title": "Redizajn finansijskog onboardinga za neobanku",
+      "summary": "Dvojezični onboarding tok koji je prepolovio odustajanje i postao temelj vizuelnog identiteta proizvoda.",
+      "industry": "Fintech",
+      "roles": "Vođa dizajna, Frontend",
+      "services": "Dizajn proizvoda, Brend sistem, Web razvoj",
+      "deliverables": "End-to-end onboarding tok (14 ekrana), Design sistem u Figmi sa 120+ tokena, Next.js marketing sajt + dashboard osnova, Brend smernice (PDF, 48 strana)",
+      "metric1Label": "Završetak onboardinga",
+      "metric1Value": "+48%",
+      "metric2Label": "Vreme do prvog depozita",
+      "metric2Value": "−62%",
+      "metric3Label": "CSAT (posle lansiranja)",
+      "metric3Value": "4.8 / 5",
+      "problem": "Meridian° je gubio 61% korisnika pri registraciji — nailazili su na guste KYC forme pre nego što bi videli ikakvu vrednost. Brend je bio logo u stilu tabele, bez glasa.",
+      "approach1": "Analizirali 40+ tokova konkurencije i sproveli 8 intervjua sa korisnicima (SR/EN)",
+      "approach2": "Rekonstruisali tok kao 3 postepene mikro-odluke umesto jedne duge forme",
+      "approach3": "Kreirali tipografski identitet — bez maskota, bez stock ilustracija",
+      "approach4": "Pustili iza feature flag-a, merili pa preusmerili sav saobraćaj",
+      "outcome": "Lansirano u Q2 2025. Završetak onboardinga porastao sa 39% → 58% u prvih šest sedmica. Isti tipografski sistem sada se koristi kroz web, mobile i support dokumentaciju.",
+      "quote": "Tretirali su onboarding kao proizvod, ne kao formu. Rezultat nije samo izgledao bolje — pomerio je biznis.",
+      "quoteAuthor": "A. Ilić",
+      "quoteRole": "Šef proizvoda, Meridian°"
+    },
+    "kauza": {
+      "client": "KAUZA",
+      "title": "Studio identitet koji je 'dosadan B2B' učinio magazinom",
+      "summary": "Rebrendirali beogradsku konsultantsku kuću editorial glasom, custom wordmarkom i sajtom koji se čita kao štampani magazin.",
+      "industry": "Profesionalne usluge",
+      "roles": "Kreativni pravac, Dizajn brenda, Web razvoj",
+      "services": "Identitet brenda, Editorial dizajn, Web razvoj",
+      "deliverables": "Custom wordmark + kompletan tipografski sistem, Brend smernice (PDF, 62 strane), Editorial sajt (8 šablona, 4 layouta studija slučaja), Pitch deck + sistem predloga",
+      "metric1Label": "Kvalifikovani dolazni lidovi",
+      "metric1Value": "+184%",
+      "metric2Label": "Prosečno trajanje sesije",
+      "metric2Value": "3m 42s",
+      "metric3Label": "Zaključeni poslovi u prvih 90 dana",
+      "metric3Value": "7",
+      "problem": "KAUZA je imala posao, ali ne i omotač. Konsultanti koji zaključuju osmocifrene poslove gubili su pitcheve od slabijih firmi sa boljim sajtovima. Njihov stari sajt se čitao kao agencijski šablon iz 2016.",
+      "approach1": "Definisali editorial glas — dugačak format, samouveren, blago kontraran",
+      "approach2": "Izgradili custom wordmark sa prelazom sa serifa na sans-serif",
+      "approach3": "Dizajnirali sajt kao magazin: masthead, priče, arhiva",
+      "approach4": "Tipografija na prvom mestu, bez stock fotografija, bez gradijenata",
+      "outcome": "Rebrand lansiran u Q4 2024. Kvalifikovani inbound skoro utrostručen u sledećem kvartalu. Tri najveća klijenta do tada naveli su sajt kao razlog zbog kog su nam se javili.",
+      "quote": "Nismo hteli novi logo. Hteli smo novi stav. To je ono što su isporučili.",
+      "quoteAuthor": "M. Petrović",
+      "quoteRole": "Izvršni partner, KAUZA"
+    }
+  },
+  "caseStudy": {
+    "backToWork": "Nazad na sve radove",
+    "metaClient": "Klijent",
+    "metaYear": "Godina",
+    "metaRole": "Naša uloga",
+    "metaServices": "Usluge",
+    "resultsLabel": "REZULTATI",
+    "problemLabel": "PROBLEM",
+    "approachLabel": "PRISTUP",
+    "deliverablesLabel": "ISPORUČENO",
+    "outcomeLabel": "ISHOD",
+    "nextLabel": "SLEDEĆI PROJEKAT",
+    "nextCta": "Pogledajte"
   },
   "positioning": {
     "whoLabel": "ZA KOGA",
@@ -59,6 +156,8 @@
     "title": "Od ideje do lansiranja",
     "subtitle": "Jasan, proveren proces koji vas drži u toku na svakom koraku.",
     "timeline": "Većina projekata ide od briefinga do lansiranja za 3–5 sedmica.",
+    "stepLabel": "Korak",
+    "deliverablesInlineLabel": "Isporučeno",
     "steps": {
       "discovery": {
         "title": "Prvo slušamo.",
@@ -107,8 +206,14 @@
   },
   "scheduler": {
     "title": "Razgovarajmo o vašem projektu",
-    "subtitle": "Zakažite besplatan 30-minutni strateški poziv. Bez obaveza.",
-    "cta": "Počnite s besplatnim strateškim pozivom"
+    "subtitle": "Zakažite besplatan 30-minutni strateški poziv. Mapiraćemo vaš projekat, reći šta bismo uradili prvo i ostaviti vam plan — bez obzira da li nas angažujete ili ne.",
+    "cta": "Zakažite poziv",
+    "label": "SLEDEĆI KORAK",
+    "headlineLine1": "Krenimo",
+    "headlineLine2": "zajedno.",
+    "trustFree": "Besplatan 30-min poziv",
+    "trustNoCommit": "Bez obaveza",
+    "trustReply": "Odgovor u 24h"
   },
   "about": {
     "label": "O NAMA",
@@ -139,13 +244,14 @@
   },
   "contact": {
     "label": "KONTAKT",
-    "title": "Hajde da Radimo Zajedno",
-    "subtitle": "Imate projekat na umu? Zakažite poziv ili popunite formu — javićemo vam se u roku od 24 sata.",
-    "booking": {
-      "title": "Zakaži Sastanak",
-      "subtitle": "Rezervišite 30-minutni poziv sa nama"
-    },
-    "or": "Ili nam se javite direktno",
+    "title": "Hajde da radimo zajedno.",
+    "subtitle": "Izaberite termin koji vam odgovara. Besplatan 30-minutni strateški poziv — bez slajdova, bez prodaje. Mapiraćemo vaš projekat i ostaviti vam plan.",
+    "or": "ILI",
+    "calHint": "Naš kalendar je uživo. Izaberite bilo koji slobodan termin — odmah potvrđujemo.",
+    "formHeading": "Više volite pisati?",
+    "formSubheading": "Pošaljite nam obris projekta i odgovorićemo u roku od 24 sata — pitanjima, obimom ili jasnim sledećim korakom.",
+    "directLabel": "DIREKTAN KONTAKT",
+    "directBlurb": "Niste spremni za poziv? Pošaljite nam obris projekta i odgovorićemo u roku od 24 sata pitanjima ili sledećim korakom.",
     "email": "un.studio.rs@gmail.com",
     "location": "Beograd, Srbija — Dostupni širom sveta",
     "form": {
@@ -156,6 +262,8 @@
       "message": "Detalji Projekta",
       "messagePlaceholder": "Recite nam o vašem projektu, ciljevima i vremenskom okviru...",
       "submit": "Pošaljite Poruku",
+      "sending": "Šalje se…",
+      "errorPrefix": "Nešto je pošlo po zlu:",
       "success": "Poruka Poslata!",
       "successText": "Hvala što ste se javili. Odgovorićemo u roku od 24 sata."
     },
@@ -172,6 +280,9 @@
   "servicesPage": {
     "title": "Šta radimo",
     "subtitle": "Od brendiranja do full-stack razvoja — oživljavamo vašu viziju sa piksel-savršenom preciznošću.",
+    "includedLabel": "Šta je uključeno",
+    "approachLabel": "Naš pristup",
+    "whyLabel": "Zašto je ovo važno",
     "web": {
       "title": "Web Dizajn i Razvoj",
       "hook": "Vaš sajt je vaš najmoćniji prodavac. Hajde da ga učinimo efikasnijim.",

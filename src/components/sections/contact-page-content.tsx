@@ -2,255 +2,343 @@
 
 import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
-import {
-  Mail,
-  MapPin,
-  Send,
-  Calendar,
-  ChevronDown,
-} from "lucide-react";
-import { FadeIn } from "@/components/ui/fade-in";
-import { cn } from "@/lib/utils";
+import { Mail, MapPin, Send, ArrowUpRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CalEmbed } from "@/components/ui/cal-embed";
 
 function Accordion({
   question,
   answer,
+  isOpen,
+  onToggle,
 }: {
   question: string;
   answer: string;
+  isOpen: boolean;
+  onToggle: () => void;
 }) {
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className="border-b border-[var(--border)]">
+    <li className="border-b border-[var(--border)]">
       <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-5 text-left cursor-pointer"
+        type="button"
+        onClick={onToggle}
+        className="group w-full flex items-start justify-between gap-6 py-6 text-left"
+        aria-expanded={isOpen}
       >
-        <span className="text-sm font-medium text-white pr-4">{question}</span>
-        <ChevronDown
-          size={16}
-          className={cn(
-            "text-[var(--text-muted)] shrink-0 transition-transform duration-200",
-            open && "rotate-180"
-          )}
-        />
+        <span className="font-heading font-semibold text-[var(--text-primary)] tracking-[-0.02em] leading-[1.2] transition-colors duration-300 group-hover:text-[var(--accent)] text-lg">
+          {question}
+        </span>
+        <span
+          className="relative shrink-0 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] transition-all duration-300 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)]/10"
+          aria-hidden
+        >
+          <span className="relative block h-[1.5px] w-3.5 bg-[var(--text-primary)] group-hover:bg-[var(--accent)] transition-colors duration-300" />
+          <motion.span
+            className="absolute h-[1.5px] w-3.5 bg-[var(--text-primary)] group-hover:bg-[var(--accent)] transition-colors duration-300"
+            animate={{ rotate: isOpen ? 0 : 90 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </span>
       </button>
-      <div
-        className={cn(
-          "overflow-hidden transition-all duration-300",
-          open ? "max-h-48 pb-5" : "max-h-0"
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <p className="pb-6 pr-14 text-[var(--text-secondary)] leading-relaxed max-w-2xl">
+              {answer}
+            </p>
+          </motion.div>
         )}
-      >
-        <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-          {answer}
-        </p>
-      </div>
-    </div>
+      </AnimatePresence>
+    </li>
   );
 }
 
 export function ContactPage() {
   const t = useTranslations("contact");
   const tProcess = useTranslations("process");
+  const tScheduler = useTranslations("scheduler");
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (sending) return;
+    setSending(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      message: String(data.get("message") ?? ""),
+      website: String(data.get("website") ?? ""),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json();
+      if (!res.ok || !json.ok) {
+        throw new Error(json.error || "Failed to send");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send");
+    } finally {
+      setSending(false);
+    }
   };
 
-  const faqKeys = ["q1", "q2", "q3", "q4"] as const;
+  const faqKeys = [1, 2, 3, 4] as const;
 
   return (
-    <main className="pt-32 pb-24">
-      {/* Hero */}
-      <section className="px-6 lg:px-8 mb-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <FadeIn>
-            <span className="text-xs font-medium tracking-[0.12em] text-[var(--accent)]">
-              {t("label")}
-            </span>
-            <h1 className="mt-3 text-4xl sm:text-6xl font-heading font-bold text-[var(--text-primary)] tracking-tight">
-              {t("title")}
-            </h1>
-            <p className="mt-4 text-[var(--text-secondary)] max-w-xl mx-auto">
-              {t("subtitle")}
+    <main className="pt-32 md:pt-40 pb-32 px-6 lg:px-10">
+      <div className="max-w-6xl mx-auto">
+        {/* Hero */}
+        <div className="flex flex-col items-center text-center mb-16 md:mb-20">
+          <span className="eyebrow">{t("label")}</span>
+          <h1
+            className="mt-6 font-heading font-semibold text-[var(--text-primary)] tracking-[-0.035em] leading-[0.92] max-w-4xl"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 6.5rem)" }}
+          >
+            {t("title")}
+          </h1>
+          <p className="mt-8 text-base md:text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl">
+            {t("subtitle")}
+          </p>
+        </div>
+
+        {/* Cal.com embed — primary conversion path */}
+        <section className="mb-24 md:mb-28">
+          <div className="flex flex-col items-center text-center mb-8 gap-3">
+            <span className="eyebrow">{tScheduler("label")}</span>
+            <p className="text-sm text-[var(--text-muted)] max-w-lg">
+              {t("calHint")}
             </p>
-          </FadeIn>
-        </div>
-      </section>
+          </div>
+          <CalEmbed />
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[0.7rem] uppercase tracking-[0.2em] text-[var(--text-muted)]">
+            <span className="flex items-center gap-2">
+              <span className="h-1 w-1 rounded-full bg-[var(--accent)]" />
+              {tScheduler("trustFree")}
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="h-1 w-1 rounded-full bg-[var(--accent)]" />
+              {tScheduler("trustNoCommit")}
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="h-1 w-1 rounded-full bg-[var(--accent)]" />
+              {tScheduler("trustReply")}
+            </span>
+          </div>
+        </section>
 
-      {/* Meeting scheduler - Cal.com embed */}
-      <section className="px-6 lg:px-8 mb-16">
-        <div className="max-w-3xl mx-auto">
-          <FadeIn>
-            <div className="rounded-2xl border border-[var(--accent)]/20 bg-[var(--surface)] overflow-hidden">
-              {/* Header */}
-              <div className="p-8 border-b border-[var(--border)]">
-                <h2 className="text-2xl font-heading font-bold text-white mb-2">
-                  {t("booking.title")}
-                </h2>
-                <p className="text-sm text-[var(--text-secondary)]">
-                  {t("booking.subtitle")}
-                </p>
-              </div>
-
-              {/* Cal.com Embed */}
-              <div className="w-full" style={{ minHeight: "600px" }}>
-                <iframe
-                  src="https://cal.com/un-design-v17dtf/30min?overlayCalendar=true"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  title="Schedule a Meeting"
-                  style={{
-                    border: "none",
-                    display: "block",
-                  }}
-                />
-              </div>
-
-              {/* Fallback email */}
-              <div className="p-8 border-t border-[var(--border)] text-center">
-                <p className="text-xs text-[var(--text-muted)] mb-3">
-                  Can't use the scheduler?
-                </p>
-                <a
-                  href="mailto:un.studio.rs@gmail.com"
-                  className="inline-flex h-10 items-center gap-2 rounded-full bg-[var(--accent)]/10 px-6 text-sm font-medium text-[var(--accent)] hover:bg-[var(--accent)]/20 transition-colors"
-                >
-                  <Mail size={14} /> {t("email")}
-                </a>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-3xl mx-auto px-6 lg:px-8 mb-16">
-        <div className="flex items-center gap-4">
-          <div className="flex-1 h-px bg-[var(--border)]" />
-          <span className="text-xs text-[var(--text-muted)] font-medium">
-            {t("or")}
+        {/* Section heading */}
+        <div className="flex flex-col items-center text-center mb-16 md:mb-20 gap-5">
+          <span className="flex items-center gap-5 w-full max-w-xs">
+            <span className="flex-1 accent-rule" />
+            <span className="text-[0.7rem] uppercase tracking-[0.22em] text-[var(--text-muted)] shrink-0">
+              {t("or")}
+            </span>
+            <span className="flex-1 accent-rule" />
           </span>
-          <div className="flex-1 h-px bg-[var(--border)]" />
+          <h2
+            className="font-heading font-semibold text-[var(--text-primary)] tracking-[-0.025em] leading-[1] max-w-3xl"
+            style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)" }}
+          >
+            {t("formHeading")}
+          </h2>
+          <p className="text-sm text-[var(--text-secondary)] max-w-lg leading-relaxed">
+            {t("formSubheading")}
+          </p>
         </div>
-      </div>
 
-      {/* Contact form + info */}
-      <section className="px-6 lg:px-8 mb-24">
-        <div className="max-w-3xl mx-auto">
-          <FadeIn>
+        {/* Form (centered) */}
+        <section className="mb-16 md:mb-20 max-w-2xl mx-auto">
+          <div>
             {submitted ? (
-              <div className="flex flex-col items-center justify-center rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 p-12 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[var(--accent)]/10 text-[var(--accent)] mb-4">
-                  <Send size={24} />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col items-center text-center rounded-3xl border border-[var(--accent)]/30 bg-[var(--accent)]/5 p-12 md:p-16"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--accent)] text-black mb-6">
+                  <Send size={22} />
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-white">
+                <h3 className="font-heading font-semibold text-[var(--text-primary)] tracking-[-0.02em] text-2xl md:text-3xl">
                   {t("form.success")}
                 </h3>
-                <p className="mt-2 text-[var(--text-secondary)]">
+                <p className="mt-4 text-[var(--text-secondary)] leading-relaxed max-w-md">
                   {t("form.successText")}
                 </p>
-              </div>
+              </motion.div>
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8 space-y-5"
+                className="rounded-3xl border border-[var(--border)] bg-[var(--surface)]/60 backdrop-blur-sm p-8 md:p-10 space-y-6"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
-                      {t("form.name")}
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder={t("form.namePlaceholder")}
-                      className="w-full rounded-lg border border-[var(--border)] bg-black/50 px-4 py-2.5 text-sm text-white placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-transparent transition"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
-                      {t("form.email")}
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder={t("form.emailPlaceholder")}
-                      className="w-full rounded-lg border border-[var(--border)] bg-black/50 px-4 py-2.5 text-sm text-white placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-transparent transition"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
-                    {t("form.message")}
-                  </label>
-                  <textarea
-                    required
-                    rows={5}
-                    placeholder={t("form.messagePlaceholder")}
-                    className="w-full rounded-lg border border-[var(--border)] bg-black/50 px-4 py-2.5 text-sm text-white placeholder:text-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/50 focus:border-transparent transition resize-none"
+                  <FormField
+                    name="name"
+                    label={t("form.name")}
+                    placeholder={t("form.namePlaceholder")}
+                    type="text"
+                  />
+                  <FormField
+                    name="email"
+                    label={t("form.email")}
+                    placeholder={t("form.emailPlaceholder")}
+                    type="email"
                   />
                 </div>
+                <FormField
+                  name="message"
+                  label={t("form.message")}
+                  placeholder={t("form.messagePlaceholder")}
+                  as="textarea"
+                />
 
                 {/* Honeypot */}
                 <div className="hidden" aria-hidden="true">
-                  <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[var(--accent)] px-8 text-sm font-semibold text-black hover:brightness-110 transition-all duration-200 gap-2 cursor-pointer"
+                  disabled={sending}
+                  className="group inline-flex h-14 w-full items-center justify-center rounded-full bg-[var(--accent)] px-8 text-sm font-semibold text-black transition-[filter,box-shadow] duration-300 hover:brightness-105 hover:shadow-[0_0_48px_0_var(--accent-glow)] gap-2 disabled:opacity-60 disabled:cursor-wait"
                 >
-                  {t("form.submit")} <Send size={16} />
+                  {sending ? t("form.sending") : t("form.submit")}
+                  {!sending && (
+                    <ArrowUpRight
+                      size={16}
+                      className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  )}
                 </button>
+
+                {error && (
+                  <p className="text-xs text-red-400 text-center">
+                    {t("form.errorPrefix")} {error}
+                  </p>
+                )}
+
+                <p className="text-xs text-[var(--text-muted)] text-center">
+                  {t("confirm")}
+                </p>
               </form>
             )}
-          </FadeIn>
+          </div>
+        </section>
 
-          {/* Contact info */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-6 justify-center">
-            <div className="flex items-center gap-3">
-              <Mail size={16} className="text-[var(--accent)]" />
+        {/* Direct line strip (centered) */}
+        <section className="mb-24 md:mb-28">
+          <div className="max-w-3xl mx-auto flex flex-col items-center text-center gap-6">
+            <span className="eyebrow">{t("directLabel")}</span>
+            <p className="text-[var(--text-secondary)] leading-relaxed max-w-lg">
+              {t("directBlurb")}
+            </p>
+            <div className="mt-2 flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
               <a
                 href="mailto:un.studio.rs@gmail.com"
-                className="text-sm text-[var(--text-secondary)] hover:text-white transition-colors"
+                className="group flex items-center gap-3"
               >
-                {t("email")}
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] text-[var(--text-primary)] transition-all duration-300 group-hover:bg-[var(--accent)] group-hover:border-[var(--accent)] group-hover:text-black">
+                  <Mail size={16} />
+                </span>
+                <span className="text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">
+                  {t("email")}
+                </span>
               </a>
-            </div>
-            <div className="flex items-center gap-3">
-              <MapPin size={16} className="text-[var(--accent)]" />
-              <span className="text-sm text-[var(--text-secondary)]">
-                {t("location")}
-              </span>
+              <div className="flex items-center gap-3">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] text-[var(--text-primary)]">
+                  <MapPin size={16} />
+                </span>
+                <span className="text-[var(--text-secondary)]">
+                  {t("location")}
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ */}
-      <section className="px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <FadeIn>
-            <h2 className="text-2xl font-heading font-bold text-white mb-8">
-              {tProcess("faq.title")}
-            </h2>
-            <div>
-              {faqKeys.map((fk) => (
-                <Accordion
-                  key={fk}
-                  question={tProcess(`faq.${fk}`)}
-                  answer={tProcess(`faq.a${fk.slice(1)}`)}
-                />
-              ))}
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+        {/* FAQ */}
+        <section>
+          <div className="flex flex-col items-center text-center mb-12">
+            <span className="eyebrow">{tProcess("faq.title")}</span>
+          </div>
+          <ul className="max-w-3xl mx-auto border-t border-[var(--border)]">
+            {faqKeys.map((n, i) => (
+              <Accordion
+                key={n}
+                question={tProcess(`faq.q${n}`)}
+                answer={tProcess(`faq.a${n}`)}
+                isOpen={openFaq === i}
+                onToggle={() => setOpenFaq(openFaq === i ? null : i)}
+              />
+            ))}
+          </ul>
+        </section>
+      </div>
     </main>
+  );
+}
+
+function FormField({
+  name,
+  label,
+  placeholder,
+  type = "text",
+  as = "input",
+}: {
+  name: string;
+  label: string;
+  placeholder: string;
+  type?: string;
+  as?: "input" | "textarea";
+}) {
+  const base =
+    "w-full bg-transparent border-b border-[var(--border)] focus:border-[var(--accent)] px-0 py-3 text-base text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none transition-colors duration-300";
+  return (
+    <div>
+      <label className="block text-[0.7rem] uppercase tracking-[0.2em] text-[var(--text-muted)] mb-3">
+        {label}
+      </label>
+      {as === "textarea" ? (
+        <textarea
+          name={name}
+          required
+          rows={4}
+          placeholder={placeholder}
+          className={`${base} resize-none`}
+        />
+      ) : (
+        <input
+          name={name}
+          required
+          type={type}
+          placeholder={placeholder}
+          className={base}
+        />
+      )}
+    </div>
   );
 }

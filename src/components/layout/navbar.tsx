@@ -11,9 +11,10 @@ import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
+  { key: "work", href: "/work" },
   { key: "services", href: "/services" },
-  { key: "about", href: "/about" },
   { key: "process", href: "/process" },
+  { key: "about", href: "/about" },
   { key: "contact", href: "/contact" },
 ] as const;
 
@@ -48,7 +49,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-black/80 backdrop-blur-md border-b border-[var(--border)]"
+          ? "bg-[var(--bg)]/80 backdrop-blur-xl border-b border-[var(--border)]"
           : "bg-transparent"
       )}
     >

@@ -85,7 +85,7 @@ export function ServicesPage() {
                     {/* What's included */}
                     <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8">
                       <h3 className="text-sm font-medium tracking-[0.08em] text-[var(--text-muted)] mb-4 uppercase">
-                        What&apos;s included
+                        {t("includedLabel")}
                       </h3>
                       <ul className="space-y-3">
                         {includes.map((item) => (
@@ -106,7 +106,7 @@ export function ServicesPage() {
                     {/* Our approach */}
                     <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-8">
                       <h3 className="text-sm font-medium tracking-[0.08em] text-[var(--text-muted)] mb-4 uppercase">
-                        Our approach
+                        {t("approachLabel")}
                       </h3>
                       <div className="space-y-4">
                         {approaches.map((step, i) => (
@@ -125,7 +125,7 @@ export function ServicesPage() {
                     {/* Why this matters */}
                     <div className="rounded-2xl border border-[var(--accent)]/20 bg-[var(--accent)]/5 p-8">
                       <h3 className="text-sm font-medium tracking-[0.08em] text-[var(--accent)] mb-3 uppercase">
-                        Why this matters
+                        {t("whyLabel")}
                       </h3>
                       <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                         {t(`${service.key}.why`)}

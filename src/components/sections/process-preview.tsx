@@ -2,7 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { FadeIn } from "@/components/ui/fade-in";
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const stepKeys = ["discovery", "design", "build", "launch"] as const;
 
@@ -10,50 +11,135 @@ export function ProcessPreview() {
   const t = useTranslations("process");
 
   return (
-    <section className="py-24 px-6 lg:px-8">
+    <section className="relative py-32 px-6 lg:px-10">
       <div className="max-w-7xl mx-auto">
-        <FadeIn className="text-center mb-16">
-          <span className="text-xs font-medium tracking-[0.12em] text-[var(--accent)]">
-            {t("label")}
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-[var(--text-primary)] tracking-tight">
+        {/* Header */}
+        <div className="flex flex-col items-center text-center gap-5 mb-16 md:mb-20">
+          <span className="eyebrow">{t("label")}</span>
+          <h2
+            className="font-heading font-semibold text-[var(--text-primary)] tracking-[-0.03em] leading-[0.95] max-w-4xl"
+            style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)" }}
+          >
             {t("title")}
           </h2>
-          <p className="mt-4 text-[var(--text-secondary)] max-w-xl mx-auto">
+          <p className="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed max-w-xl">
             {t("subtitle")}
           </p>
-        </FadeIn>
+          <p className="text-[0.7rem] uppercase tracking-[0.2em] text-[var(--text-muted)]">
+            {t("timeline")}
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {stepKeys.map((key, i) => (
-            <FadeIn key={key} delay={i * 0.05}>
-              <div className="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 hover:border-[var(--accent)]/30 transition-all duration-300">
-                <span className="text-4xl font-heading font-bold text-[var(--border)]">
-                  0{i + 1}
-                </span>
-                <h3 className="mt-3 text-lg font-heading font-semibold text-white">
-                  {t(`steps.${key}.title`)}
-                </h3>
-                <p className="mt-2 text-sm text-[var(--text-secondary)]">
-                  {t(`steps.${key}.description`)}
-                </p>
-              </div>
-            </FadeIn>
+            <ProcessCard
+              key={key}
+              index={i}
+              total={stepKeys.length}
+              title={t(`steps.${key}.title`)}
+              description={t(`steps.${key}.description`)}
+              duration={t(`steps.${key}.duration`)}
+              deliverables={t(`steps.${key}.deliverables`)}
+              stepLabel={t("stepLabel")}
+              deliverablesLabel={t("deliverablesInlineLabel")}
+            />
           ))}
         </div>
 
-        <FadeIn delay={0.3} className="mt-8 text-center">
-          <p className="text-sm text-[var(--text-muted)]">
-            {t("timeline")}
+        {/* CTA footer */}
+        <div className="mt-20 flex flex-col items-center text-center gap-5">
+          <p className="text-sm text-[var(--text-secondary)] max-w-md">
+            {t("cta")}
           </p>
           <Link
-            href="/process"
-            className="inline-flex items-center gap-2 mt-4 text-sm font-medium text-[var(--accent)] hover:underline cursor-pointer"
+            href="/contact"
+            className="inline-flex items-center gap-3 h-14 rounded-full bg-[var(--accent)] px-8 text-sm font-semibold text-black transition-[filter,box-shadow] duration-300 hover:brightness-105 hover:shadow-[0_0_48px_0_var(--accent-glow)]"
           >
-            {t("label")} →
+            {t("cta")}
+            <ArrowUpRight size={18} />
           </Link>
-        </FadeIn>
+        </div>
       </div>
     </section>
+  );
+}
+
+function ProcessCard({
+  index,
+  total,
+  title,
+  description,
+  duration,
+  deliverables,
+  stepLabel,
+  deliverablesLabel,
+}: {
+  index: number;
+  total: number;
+  title: string;
+  description: string;
+  duration: string;
+  deliverables: string;
+  stepLabel: string;
+  deliverablesLabel: string;
+}) {
+  const items = deliverables.split(", ");
+  return (
+    <motion.article
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10%" }}
+      transition={{
+        duration: 0.9,
+        delay: index * 0.07,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="relative rounded-3xl border border-[var(--border)] bg-[var(--surface)]/70 backdrop-blur-sm p-8 md:p-10 overflow-hidden"
+    >
+      {/* oversized background numeral */}
+      <span
+        aria-hidden
+        className="absolute -bottom-10 -right-2 font-heading font-semibold text-[14rem] leading-none tracking-[-0.08em] text-white/[0.03] pointer-events-none select-none"
+      >
+        {String(index + 1).padStart(2, "0")}
+      </span>
+
+      <div className="relative flex items-center gap-3 text-[0.7rem] uppercase tracking-[0.22em] text-[var(--text-muted)] mb-6">
+        <span>
+          {stepLabel} {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+        </span>
+        <span className="h-px w-10 bg-[var(--border-strong)]" />
+        <span className="text-[var(--accent)]">{duration}</span>
+      </div>
+
+      <h3
+        className="relative font-heading font-semibold text-[var(--text-primary)] tracking-[-0.025em] leading-[1.02]"
+        style={{ fontSize: "clamp(1.5rem, 2.4vw, 2rem)" }}
+      >
+        {title}
+      </h3>
+
+      <p className="relative mt-4 text-[var(--text-secondary)] leading-relaxed max-w-md">
+        {description}
+      </p>
+
+      <div className="relative mt-8 pt-6 border-t border-[var(--border)]">
+        <span className="block text-[0.7rem] uppercase tracking-[0.2em] text-[var(--text-muted)] mb-3">
+          {deliverablesLabel}
+        </span>
+        <ul className="space-y-2">
+          {items.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-3 text-sm text-[var(--text-primary)]"
+            >
+              <span className="mt-[0.55em] inline-block h-px w-5 bg-[var(--accent)] shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.article>
   );
 }
